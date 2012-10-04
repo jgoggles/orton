@@ -1,0 +1,66 @@
+<h1>Listing weeks</h1>
+
+<table>
+  <tr>
+    <th>Year</th>
+    <th>%</th>
+    <th>Week</th>
+    <th>Wins</th>
+    <th>Losses</th>
+    <th>Pushes</th>
+  </tr>
+  <% Year.all.each do |year| %>
+    <tr>
+      <td><%= year.name %></td>
+      <% if year.weeks.empty? %>
+        <td></td>
+      <% else %>
+        <td><%= year.win_pct %></td>
+      <% end %>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <% unless year.weeks.empty? %>
+      <% year.weeks[2..-4].each do |week| %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><%= week.name %></td>
+          <td><%= week.wins %></td>
+          <td><%= week.losses %></td>
+          <td><%= week.pushes %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @weeks.each do |week| %>
+  <tr>
+    <td><%= week.name %></td>
+    <td><%= week.year_id %></td>
+    <td><%= week.start_date %></td>
+    <td><%= week.end_date %></td>
+    <td><%= link_to 'Show', week %></td>
+    <td><%= link_to 'Edit', edit_week_path(week) %></td>
+    <td><%= link_to 'Destroy', week, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Week', new_week_path %>

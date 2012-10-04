@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 1
+  year_id: 1
+  start_date: 2011-09-20 15:46:33
+  end_date: 2011-09-20 15:46:33
+
+two:
+  name: 1
+  year_id: 1
+  start_date: 2011-09-20 15:46:33
+  end_date: 2011-09-20 15:46:33

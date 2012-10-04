@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game_id: 1
+  team_id: 1
+  is_home: false
+  spread: 1.5
+  yards_gained: 1
+  yards_allowed: 1
+
+two:
+  game_id: 1
+  team_id: 1
+  is_home: false
+  spread: 1.5
+  yards_gained: 1
+  yards_allowed: 1

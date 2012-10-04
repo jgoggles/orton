@@ -1,0 +1,157 @@
+<div id="tooltip"></div>
+<h1>Week <%= @week.name %>, <%= @year.name %></h1>
+<table>
+  <tr id="header_row">
+    <th>Team</th>
+    <th>Edit</th>
+    <th>Last 2</th>
+    <th>Next 2</th>
+    <th>SU</th>
+    <th>ATS</th>
+    <th>Confidence</th>
+    <th>Pick</th>
+    <th>Result</th>
+    <th>SOS</th>
+    <th>Open</th>
+    <th>Current</th>
+    <th>%</th>
+    <th>Avg Spread</th>
+    <th>Avg Spread 2</th>
+    <th>Avg Diff</th>
+    <th>Avg Diff 2</th>
+    <th>PT Diff</th>
+    <th>PT Diff Spread</th>
+    <th>YPP</th>
+    <th>YPP Spread</th>
+    <th>F&C</th>
+    <th>F&C Spread</th>
+    <th>SAG</th>
+    <th>SAG Spread</th>
+    <th>SRS</th>
+    <th>SRS Spread</th>
+    <th>ANS</th>
+    <th>DVOA</th>
+    <th>off_scoring</th>
+    <th>off_scoring_sd</th>
+    <th>off_scoring_rank</th>
+    <th>def_scoring</th>
+    <th>def_scoring_sd</th>
+    <th>def_scoring rank</th>
+    <th>off_pass_eff</th>
+    <th>off_pass_eff_sd</th>
+    <th>off_pass_eff_rank</th>
+    <th>def_pass_eff</th>
+    <th>def_pass_eff_sd</th>
+    <th>def_pass_eff_rank</th>
+    <th>off_run_eff</th>
+    <th>off_run_eff_sd</th>
+    <th>off_run_eff_rank</th>
+    <th>def_run_eff</th>
+    <th>def_run_eff_sd</th>
+    <th>def_run_eff_rank</th>
+    <th>qb_sacked</th>
+    <th>qb_sacked_sd</th>
+    <th>qb_sacked_rank</th>
+    <th>qb_sacks</th>
+    <th>qb_sacks_sd</th>
+    <th>qb_sacks_rank</th>
+    <th>off_fumble_rate</th>
+    <th>off_fumble_rate_sd</th>
+    <th>off_fumble_rate_rank</th>
+    <th>def_fumble_rate</th>
+    <th>def_fumble_rate_sd</th>
+    <th>def_fumble_rate_rank</th>
+    <th>off_int_rate</th>
+    <th>off_int_rate_sd</th>
+    <th>off_int_rate_rank</th>
+    <th>def_int_rate</th>
+    <th>def_int_rate_sd</th>
+    <th>def_int_rate_rank</th>
+    <th>off_penalty_rate</th>
+    <th>off_penalty_rate_sd</th>
+    <th>off_penalty_rate_rank</th>
+  </tr>
+  <% @week.games.each do |game| %>
+    <% @shade = @week.games.index(game) % 2 == 0 ? "shade" : '' %>
+    <% [game.away, game.home].each do |gd| %>
+      <tr class="<%= @shade %>">
+        <td class="team"><%= gd.team.nickname %></td>
+        <td><%= link_to 'Edit', edit_game_detail_path(gd) %></td>
+        <td>
+          <% gd.last_two.each do |g| %>
+            <p><%= g %></p>
+          <% end %>
+        </td>
+        <td>
+          <% gd.next_two.each do |g| %>
+            <p><%= g %></p>
+          <% end %>
+        </td>
+        <td><%= gd.su_record %></td>
+        <td><%= gd.ats_record %></td>
+        <td><%= gd.confidence %></td>
+        <td><%= gd.pick %></td>
+        <td><%= gd.result %></td>
+        <td><%= gd.sos %></td>
+        <td><%= gd.opening_line %></td>
+        <td class="spread"><%= gd.spread %></td>
+        <td><%= gd.bet_percent %></td>
+        <td><%= gd.avg_spread.round(2) %></td>
+        <td><%= gd.avg_spread_2.round(2) %></td>
+        <td><%= gd.avg_1.round(2) %></td>
+        <td><%= gd.avg_2.round(2) %></td>
+        <td><%= gd.pt_diff_score %></td>
+        <td><%= gd.calc_spread("pt_diff_score") %></td>
+        <td><%= gd.ypp_score %></td>
+        <td><%= gd.calc_spread("ypp_score") %></td>
+        <td><%= gd.f_c_score %></td>
+        <td><%= gd.calc_spread("f_c_score").round(2) %></td>
+        <td><%= gd.sag_score %></td>
+        <td><%= gd.calc_spread("sag_score").round(2) %></td>
+        <td><%= gd.srs_score %></td>
+        <td><%= gd.calc_spread("srs_score").round(2) %></td>
+        <td><%= gd.ans %></td>
+        <td><%= gd.dvoa %></td>
+        <td><%= gd.off_scoring %></td>
+        <td><%= gd.off_scoring_sd %></td>
+        <td><%= gd.off_scoring_rank %></td>
+        <td><%= gd.def_scoring %></td>
+        <td><%= gd.def_scoring_sd %></td>
+        <td><%= gd.def_scoring_rank %></td>
+        <td><%= gd.off_pass_eff %></td>
+        <td><%= gd.off_pass_eff_sd %></td>
+        <td><%= gd.off_pass_eff_rank %></td>
+        <td><%= gd.def_pass_eff %></td>
+        <td><%= gd.def_pass_eff_sd %></td>
+        <td><%= gd.def_pass_eff_rank %></td>
+        <td><%= gd.off_run_eff %></td>
+        <td><%= gd.off_run_eff_sd %></td>
+        <td><%= gd.off_run_eff_rank %></td>
+        <td><%= gd.def_run_eff %></td>
+        <td><%= gd.def_run_eff_sd %></td>
+        <td><%= gd.def_run_eff_rank %></td>
+        <td><%= gd.qb_sacked %></td>
+        <td><%= gd.qb_sacked_sd %></td>
+        <td><%= gd.qb_sacked_rank.to_i %></td>
+        <td><%= gd.qb_sacks %></td>
+        <td><%= gd.qb_sacks_sd %></td>
+        <td><%= gd.qb_sacks_rank.to_i %></td>
+        <td><%= gd.off_fumble_rate %></td>
+        <td><%= gd.off_fumble_rate_sd %></td>
+        <td><%= gd.off_fumble_rate_rank %></td>
+        <td><%= gd.def_fumble_rate %></td>
+        <td><%= gd.def_fumble_rate_sd %></td>
+        <td><%= gd.def_fumble_rate_rank %></td>
+        <td><%= gd.off_int_rate %></td>
+        <td><%= gd.off_int_rate_sd %></td>
+        <td><%= gd.off_int_rate_rank %></td>
+        <td><%= gd.def_int_rate %></td>
+        <td><%= gd.def_int_rate_sd %></td>
+        <td><%= gd.def_int_rate_rank %></td>
+        <td><%= gd.off_penalty_rate %></td>
+        <td><%= gd.off_penalty_rate_sd %></td>
+        <td><%= gd.off_penalty_rate_rank %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

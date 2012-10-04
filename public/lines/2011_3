@@ -1,0 +1,146 @@
+LINES GENERATED 2011-09-21 10:44:45 -0600
+
+Jaguars: 14.5
+Panthers: 22.0
+expected away line : 7.5
+YPP DATA
+Jaguars: 17.75
+Panthers: 24.000000000000004
+expected YPP away line : 6.5
+#################################
+
+Dolphins: 23.0
+Browns: 25.0
+expected away line : 2.0
+YPP DATA
+Dolphins: 19.25
+Browns: 27.75
+expected YPP away line : 8.5
+#################################
+
+Broncos: 14.5
+Titans: 21.0
+expected away line : 6.5
+YPP DATA
+Broncos: 16.75
+Titans: 22.750000000000004
+expected YPP away line : 6.0
+#################################
+
+Patriots: 35.0
+Bills: 35.0
+expected away line : 0.0
+YPP DATA
+Patriots: 27.25
+Bills: 32.5
+expected YPP away line : 5.5
+#################################
+
+Texans: 25.0
+Saints: 21.5
+expected away line : -3.5
+YPP DATA
+Texans: 26.5
+Saints: 22.500000000000004
+expected YPP away line : -4.0
+#################################
+
+Giants: 23.0
+Eagles: 30.0
+expected away line : 7.0
+YPP DATA
+Giants: 21.0
+Eagles: 28.0
+expected YPP away line : 7.0
+#################################
+
+Lions: 32.0
+Vikings: 13.5
+expected away line : -18.5
+YPP DATA
+Lions: 29.249999999999996
+Vikings: 16.5
+expected YPP away line : -12.5
+#################################
+
+49ers: 23.0
+Bengals: 29.0
+expected away line : 6.0
+YPP DATA
+49ers: 23.0
+Bengals: 24.75
+expected YPP away line : 2.0
+#################################
+
+Ravens: 33.5
+Rams: 13.5
+expected away line : -20.0
+YPP DATA
+Ravens: 25.25
+Rams: 17.0
+expected YPP away line : -8.5
+#################################
+
+Jets: 30.0
+Raiders: 24.0
+expected away line : -6.0
+YPP DATA
+Jets: 27.749999999999996
+Raiders: 22.75
+expected YPP away line : -5.0
+#################################
+
+Chiefs: 8.0
+Chargers: 37.0
+expected away line : 29.0
+YPP DATA
+Chiefs: 14.0
+Chargers: 35.0
+expected YPP away line : 21.0
+#################################
+
+Cardinals: 29.5
+Seahawks: 11.5
+expected away line : -18.0
+YPP DATA
+Cardinals: 25.0
+Seahawks: 16.5
+expected YPP away line : -8.5
+#################################
+
+Falcons: 20.5
+Buccaneers: 33.0
+expected away line : 12.5
+YPP DATA
+Falcons: 22.0
+Buccaneers: 27.75
+expected YPP away line : 6.0
+#################################
+
+Packers: 27.5
+Bears: 24.0
+expected away line : -3.5
+YPP DATA
+Packers: 27.0
+Bears: 26.5
+expected YPP away line : -0.5
+#################################
+
+Steelers: 20.5
+Colts: 15.5
+expected away line : -5.0
+YPP DATA
+Steelers: 21.5
+Colts: 16.75
+expected YPP away line : -5.0
+#################################
+
+Redskins: 24.0
+Cowboys: 25.0
+expected away line : 1.0
+YPP DATA
+Redskins: 23.75
+Cowboys: 23.0
+expected YPP away line : -1.0
+#################################
+

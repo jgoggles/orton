@@ -1,0 +1,66 @@
+<h2><%= @game_detail.team.nickname %></h2>
+<%= form_for(@game_detail) do |f| %>
+  <% if @game_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game_detail.errors.count, "error") %> prohibited this game_detail from being saved:</h2>
+
+      <ul>
+      <% @game_detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spread %><br />
+    <%= f.text_field :spread %>
+  </div>
+  <div class="field">
+    <%= f.label :su_record %><br />
+    <%= f.text_field :su_record %>
+  </div>
+  <div class="field">
+    <%= f.label :ats_record %><br />
+    <%= f.text_field :ats_record %>
+  </div>
+  <div class="field">
+    <%= f.label :confidence %><br />
+    <%= f.select :confidence, GameDetail::CONFIDENCE.map { |v| [ v, v ] }, { :include_blank => true }%>
+  </div>
+  <div class="field">
+    <%= f.label :pick %><br />
+    <%= f.check_box :pick %>
+  </div>
+  <div class="field">
+    <%= f.label :result %><br />
+    <%= f.text_field :result %>
+  </div>
+  <div class="field">
+    <%= f.label :sos %><br />
+    <%= f.text_field :sos %>
+  </div>
+  <div class="field">
+    <%= f.label :sag_score %><br />
+    <%= f.text_field :sag_score %>
+  </div>
+  <div class="field">
+    <%= f.label :f_c_score %><br />
+    <%= f.text_field :f_c_score %>
+  </div>
+  <div class="field">
+    <%= f.label :srs_score %><br />
+    <%= f.text_field :srs_score %>
+  </div>
+  <div class="field">
+    <%= f.label :ans %><br />
+    <%= f.text_field :ans %>
+  </div>
+  <div class="field">
+    <%= f.label :dvoa %><br />
+    <%= f.text_field :dvoa %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

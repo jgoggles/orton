@@ -1,0 +1,55 @@
+<h1>Listing games</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Week</th>
+    <th>Team</th>
+    <th>Score</th>
+    <th>Yards</th>
+    <th>Spread</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.date.strftime("%m/%d/%Y") %></td>
+    <td><%= game.week_name %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><%= game.away.team.nickname %></td>
+    <td><%= game.away.score %></td>
+    <td><%= game.away.yards_gained %></td>
+    <td><%= game.away.spread %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><%= game.home.team.nickname %></td>
+    <td><%= game.home.score %></td>
+    <td><%= game.home.yards_gained %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Game', new_game_path %>
